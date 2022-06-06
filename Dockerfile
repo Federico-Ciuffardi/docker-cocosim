@@ -9,6 +9,9 @@ RUN git clone https://github.com/Federico-Ciuffardi/cyclonedds.git --branch coco
     mkdir cyclonedds/build && cd cyclonedds/build && \
     cmake -G "Unix Makefiles" -DCMAKE_INSTALL_PREFIX=/usr/local .. && cmake --build . --target install
 
+# debug
+RUN apt-get update && apt-get install -y --no-install-recommends xterm gdb valgrind
+
 # my deps
 RUN apt-get update && apt-get install -y --no-install-recommends zsh ranger xclip fzf tmux neovim bat
 
