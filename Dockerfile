@@ -13,4 +13,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends xterm gdb valgr
 # utils
 RUN apt-get update && apt-get install -y --no-install-recommends zsh ranger xclip fzf tmux neovim bat
 
+# helper deps
+RUN apt-get update && apt-get install -y --no-install-recommends pciutils
+
 ENTRYPOINT tmux
