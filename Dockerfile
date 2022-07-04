@@ -11,9 +11,17 @@ RUN apt-get update && apt-get install -y --no-install-recommends maven default-j
 RUN apt-get update && apt-get install -y --no-install-recommends xterm gdb valgrind
 
 # utils
-RUN apt-get update && apt-get install -y --no-install-recommends zsh ranger xclip fzf tmux neovim bat
+RUN apt-get update && apt-get install -y --no-install-recommends tmux
 
 # helper deps
 RUN apt-get update && apt-get install -y --no-install-recommends pciutils
+
+# development
+RUN apt-get update && apt-get install -y --no-install-recommends zsh ranger xclip fzf neovim bat
+
+## nvim deps
+RUN curl -fsSL https://deb.nodesource.com/setup_16.x | bash - && apt-get install -y nodejs
+
+RUN apt-get update && apt-get install -y --no-install-recommends python3 python3-pynvim
 
 ENTRYPOINT tmux
